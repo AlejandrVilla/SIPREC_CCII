@@ -7,3 +7,5 @@ int main(){
     Centro_de_Salud centro1("Samuel&Jennys.SAC","Hunter");
     centro1.main();
 }
+
+// amarillin XD

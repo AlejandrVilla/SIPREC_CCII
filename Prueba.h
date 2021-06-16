@@ -6,32 +6,43 @@
 
 class Prueba : public Suministro{
     private:
-        std::string tipo;
     public:
-        Prueba(std::string fechaLlegada,int stock,std::string _tipo)
-        :Suministro(fechaLlegada,stock),tipo(_tipo){}
+        Prueba(std::string tipo,std::string fechaLlegada,int stock)
+        :Suministro(tipo,fechaLlegada,stock){}
         virtual ~Prueba(){}
-        
         virtual void verInfo() override;
-        void setTipo(std::string);
-        std::string getTipo();
+        virtual void actualizarDatos() override;
 };
 
 void Prueba::verInfo(){
-    std::cout<<"tipo de prueba: "<<getTipo()<<std::endl;
-    std::cout<<"fecha de llegada: "<<getFechaLlegada()<<std::endl;
-    std::cout<<"stock disponible: "<<getStock()<<" unidades"<<std::endl;
+    std::cout<<"Tipo de prueba: "<<getTipo()<<std::endl;
+    std::cout<<"Fecha de llegada: "<<getFechaLlegada()<<std::endl;
+    std::cout<<"Stock disponible: "<<getStock()<<" unidades"<<std::endl;
     std::cout<<std::endl;
 }
-
-void Prueba::setTipo(std::string tipo){
-    this->tipo=tipo;
+void Prueba::actualizarDatos(){
+    int opcion{0};
+    do{
+        std::cout << ">>>SELECCIONE DATO A MODIFICAR: \n"
+                  << "1)TIPO\n"
+                  << "2)FECHA DE LLEGADA\n"
+                  << "3)STOCK\n"
+                  << "0)SALIR\n"; cin >> opcion;
+        if(opcion==1){
+            string t;
+            std::cout << ">>>INGRESE NUEVO TIPO: "; cin >> t;
+            setTipo(t);
+        }else if(opcion==2){
+            string t;
+            std::cout << ">>>INGRESE NUEVA FECHA dd/mm/aa: "; cin >> t;
+            setFechaLlegada(t);
+        }else if(opcion==3){
+            int c;
+            std::cout << ">>>INGRESE NUEVO STOCK: "; cin >> c;
+            setStock(getStock()+c);
+        }
+    }while(opcion!=0);
 }
-
-std::string Prueba::getTipo(){
-    return tipo;
-}
-
 
 
 

@@ -6,34 +6,28 @@
 
 class Medicamento:public Suministro{
     private:
-        std::string nombre;
         int dosis;
     public:    
-        Medicamento(std::string fechaLlegada,int stock,std::string _nombre,int _dosis)
-        :Suministro(fechaLlegada,stock),nombre(_nombre),dosis(_dosis){}
+        Medicamento(std::string tipo,std::string fechaLlegada,int stock,int _dosis)
+        :Suministro(tipo,fechaLlegada,stock),dosis(_dosis){}
         virtual ~Medicamento(){}
 
         virtual void verInfo() override;
-        void setNombre(std::string);
-        std::string getNombre();
+        virtual void actualizarDatos() override;
         void setDosis(int);
         int getDosis();
 };
 
 void Medicamento::verInfo(){
-    std::cout<<"nombre del medicamento: "<<getNombre()<<std::endl;
-    std::cout<<"cantidad de dosis: "<<getDosis()<<std::endl;
-    std::cout<<"fecha de llegada: "<<getFechaLlegada()<<std::endl;
-    std::cout<<"stock disponible: "<<getStock()<<" unidades"<<std::endl;
+    std::cout<<"Nombre del medicamento: "<<getTipo()<<std::endl;
+    std::cout<<"Cantidad de dosis: "<<getDosis()<<std::endl;
+    std::cout<<"Fecha de llegada: "<<getFechaLlegada()<<std::endl;
+    std::cout<<"Stock disponible: "<<getStock()<<" unidades"<<std::endl;
     std::cout<<std::endl;
 }
 
-void Medicamento::setNombre(std::string nombre){
-    this->nombre=nombre;
-}
-
-std::string Medicamento::getNombre(){
-    return nombre;
+void Vacunas::actualizarDatos(){
+    
 }
 
 void Medicamento::setDosis(int dosis){

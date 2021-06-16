@@ -2,20 +2,19 @@
 #define _CENTRO_DE_SALUD_
 #include <vector>
 #include <iostream>
-
+#include <bits/stdc++.h>
 #include "Suministro.h"
 #include "Vacunas.h"
 #include "Prueba.h"
 #include "Medicamento.h"
 #include "Mascarilla.h"
+
 using namespace std;
 
-class Centro_de_Salud
-{
+class Centro_de_Salud{
     private:
         string Nombre;
         string Distrito;
-
         vector<Suministro*> vacunas;
         vector<Suministro*> pruebas;
         vector<Suministro*> medicamentos;
@@ -28,6 +27,7 @@ class Centro_de_Salud
         void main();
         void llenarSuministros();
         void mostrarSuministros();
+        void actualizarSuministros();
         //Control de asignacion de suministros
         void setVacunas();
         void setMascarillas();
@@ -38,6 +38,10 @@ class Centro_de_Salud
         void getMascarillas();  //observado
         void getMedicamentos(); //observado
         void getPruebas();      //observado
+        //control para modificar
+        void modificar();
+        void eliminar();
+        void modificar();
 };
 
 Centro_de_Salud::Centro_de_Salud(){
@@ -47,6 +51,7 @@ Centro_de_Salud::Centro_de_Salud(string Nombre,string Distrito){
     this->Nombre = Nombre;
     this->Distrito = Distrito;
 }
+
 Centro_de_Salud::~Centro_de_Salud(){
     for (size_t i=0;i<vacunas.size();i++)
         delete vacunas[i];
@@ -141,6 +146,65 @@ void Centro_de_Salud::mostrarSuministros(){
     }while(opcion!=0);
 }
 
+void Centro_de_Salud::actualizarSuministros(){
+    int opcion{0};
+    do{
+        cout<<">>>ELIJA UNA ACCION A REALIZAR: \n";
+        cout<<"1) ACTUALIZAR SUMINISTRO \n"
+            <<"2) BORRAR SUMINISTRO \n"
+            <<"0) SALIR \n";cin >> opcion;
+        
+
+    }while(opcion!=0);
+}
+
+void Centro_de_Salud::modificar(){
+    int opcion{0};
+    do{
+        cout<<">>>ELIJA EL SUMINISTRO: \n";
+        cout<<"1) VACUNA \n"
+            <<"2) MASCARILLA \n"
+            <<"3) MEDICAMENTO \n"
+            <<"4) PRUEBAS \n"
+            <<"0) SALIR \n";cin >> opcion;
+        string tipo;
+        if(opcion==1){
+            cout << "VACUNA A MODIFICAR: "; cin >> tipo;
+            for(auto *a:vacunas){
+                if (a->getTipo() == tipo){
+                    a->actualizarDatos();
+                    break;
+                }
+        }
+        else if(opcion==2){
+            cout << "MASCARILLA A MODIFICAR: "; cin >> tipo;
+            for(auto *a:mascarillas){
+                if (a->getTipo() == tipo){
+                    a->actualizarDatos();
+                    break;
+                }
+        }
+        else if(opcion==3){
+            cout << "MEDICAMENTO A MODIFICAR: "; cin >> tipo;
+            for(auto *a:medicamentos){
+                if (a->getTipo() == tipo){
+                    a->actualizarDatos();
+                    break;
+                }
+        }
+        else if(opcion==4){
+            cout << "PRUEBA A MODIFICAR: "; cin >> tipo;
+            for(auto *a:pruebas){
+                if (a->getTipo() == tipo){
+                    a->actualizarDatos();
+                    break;
+                }
+        }
+        else{
+            cout<<"REGRESANDO...\n";
+        }
+    }while(opcion!=0);
+}
 /*
     *ASIGNADORES DE SUMINISTROS*
 */
@@ -154,7 +218,7 @@ void Centro_de_Salud::setVacunas(){
     cout<<">>>FECHA DE ASIGNACION: ";cin>>fechaLlegada;
     cout<<">>>STOCK INGRESADO: ";cin>>stock;
     cout<<endl;
-    Suministro *suministro = new Vacunas(stock,fechaLlegada,nombre,pais,dosis);
+    Suministro *suministro = new Vacunas(nombre,stock,fechaLlegada,pais,dosis);
     vacunas.push_back(suministro);
     suministro = nullptr;
 }
@@ -167,7 +231,7 @@ void Centro_de_Salud::setMascarillas(){
     cout<<">>>FECHA DE ASIGNACION: "; cin >> fechaLlegada;
     cout<<">>>STOCK INGRESADO: "; cin>>stock;
     cout<< endl;
-    Suministro *suministro = new Mascarilla(fechaLlegada,stock,tipo,calidad);
+    Suministro *suministro = new Mascarilla(tipo,fechaLlegada,stock,calidad);
     mascarillas.push_back(suministro);
     suministro = nullptr;
 }
@@ -179,7 +243,7 @@ void Centro_de_Salud::setMedicamentos(){
     cout<<">>>FECHA DE ASIGNACION: ";cin>>fechaLlegada;
     cout<<">>>STOCK INGRESADO: ";cin>>stock;
     cout<<endl;
-    Suministro *suministro = new Medicamento(fechaLlegada,stock,nombre,dosis);
+    Suministro *suministro = new Medicamento(nombre,fechaLlegada,stock,dosis);
     medicamentos.push_back(suministro);
     suministro = nullptr;
 }
@@ -192,7 +256,7 @@ void Centro_de_Salud::setPruebas(){
     cout<<">>>STOCK INGRESADO: ";cin>>stock;
     cout<<endl;
     
-    Suministro *suministro = new Prueba(fechaLlegada,stock,tipo);
+    Suministro *suministro = new Prueba(tipo,fechaLlegada,stock);
     pruebas.push_back(suministro);
     suministro = nullptr;
 }
@@ -220,5 +284,7 @@ void Centro_de_Salud::getPruebas(){
         a->verInfo();
     }
 }
+
+
 
 #endif
