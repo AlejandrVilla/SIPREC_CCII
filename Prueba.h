@@ -11,7 +11,7 @@ class Prueba : public Suministro{
         Prueba(std::string fechaLlegada,int stock,std::string _tipo)
         :Suministro(fechaLlegada,stock),tipo(_tipo){}
         virtual ~Prueba(){}
-
+        
         virtual void verInfo() override;
         void setTipo(std::string);
         std::string getTipo();

@@ -7,11 +7,13 @@ class Suministro{
     private:
         friend class sistema;
         friend class Centro_de_Salud;
+
         std::string fechaLlegada;
         int stock;
     public:
         Suministro(std::string _fechaLlegada,int _stock):fechaLlegada(_fechaLlegada),stock(_stock){}
-        virtual ~Suministro(){};
+        virtual ~Suministro(){}
+
         virtual void verInfo()=0;  //funcion virtual pura
         void setFechaLlegada(std::string);
         std::string getFechaLlegada();
