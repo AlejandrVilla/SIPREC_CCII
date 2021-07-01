@@ -17,15 +17,44 @@ class Mascarilla : public Suministro{
 };
 
 void Mascarilla::verInfo(){
-    std::cout<<"Tipo de mascarilla: "<<getTipo()<<std::endl;
-    std::cout<<"Calidad: "<<getCalidad()<<std::endl;
-    std::cout<<"Fecha de llegada: "<<getFechaLlegada()<<std::endl;
-    std::cout<<"Stock disponible: "<<getStock()<<" unidades"<<std::endl;
+    std::cout<<"TIPO DE MASCARILLA: "<<getTipo()<<std::endl;
+    std::cout<<"CALIDAD: "<<getCalidad()<<std::endl;
+    std::cout<<"FECHA DE LLEGADA: "<<getFechaLlegada()<<std::endl;
+    std::cout<<"STOCK DISPONIBLE: "<<getStock()<<" UNIDADES"<<std::endl;
     std::cout<<std::endl;
 }
 
-void Vacunas::actualizarDatos(){
-    
+void Mascarilla::actualizarDatos(){
+    int opcion{0};
+    do{
+        system("cls");
+        std::cout << ">>>SELECCIONE DATO A MODIFICAR: \n"
+                  << "1)TIPO\n"
+                  << "2)CALIDAD\n"
+                  << "3)FECHA DE LLEGADA\n"
+                  << "4)STOCK\n"
+                  << "0)SALIR\n"; cin >> opcion;
+        if(opcion==1){
+            std::string t;
+            std::cout << ">>>ACTUALICE TIPO DE PRUEBA: "; cin >> t;
+            setTipo(t);
+        }else if(opcion==2){
+            std::string t;
+            std::cout << ">>>ACTUALICE CALIDAD DEL PRODUCTO: "; cin >> t;
+            setCalidad(t);
+        }else if(opcion==3){
+            std::string t;
+            std::cout << ">>>ACTUALICE FECHA DE LLEGADA dd/mm/aa: "; cin >> t;
+            setFechaLlegada(t);
+        }else if(opcion==4){
+            int c;
+            std::cout << ">>>INGRESE CANTIDAD: "; cin >> c;
+            int op2;
+            std::cout << ">>>DESEA (1)AGREGAR (2)REDUCIR EL STOCK: "; cin >> op2;
+            op2==1?setStock(getStock()+c):setStock(getStock()-c);
+        }
+        
+    }while(opcion!=0);
 }
 
 void Mascarilla::setCalidad(std::string calidad){

@@ -4,8 +4,7 @@
 using namespace std;
 
 int main(){
-    Centro_de_Salud centro1("Samuel&Jennys.SAC","Hunter");
+    Centro_de_Salud centro1("Posta de salud San Juan","Hunter");
     centro1.main();
 }
 
-// amarillin XD

@@ -1,13 +1,15 @@
 #ifndef __VACUNAS__
 #define __VACUNAS__
 #include<iostream>
+#include<string>
 #include "Suministro.h"
+using namespace std;
 class Vacunas : public Suministro{
     private:
         std::string pais;
-        int cantDosis;
+        std::string cantDosis;
     public:
-        Vacunas(std::string tipo,int stock,std::string fechaLlegada,std::string _pais,int _cantDosis=0)
+        Vacunas(std::string tipo,int stock,std::string fechaLlegada,std::string _pais,std::string _cantDosis="")
         :Suministro(tipo,fechaLlegada,stock),pais(_pais),cantDosis(_cantDosis){}
         virtual ~Vacunas(){}
 
@@ -15,22 +17,23 @@ class Vacunas : public Suministro{
         virtual void actualizarDatos() override;
         void setPais(std::string);
         std::string getPais();
-        void setDosis(int);
-        int getDosis();
+        void setDosis(std::string);
+        std::string getDosis();
 };
 
 void Vacunas::verInfo(){
-    std::cout<<"Nombre de la vacuna: "<<getTipo()<<std::endl;
-    std::cout<<"Pais donde se produjo: "<<getPais()<<std::endl;
-    std::cout<<"Dosis requerida: "<<getDosis()<<std::endl;
-    std::cout<<"Fecha de llegada: "<<getFechaLlegada()<<std::endl;
-    std::cout<<"Stock disponible: "<<getStock()<<" unidades"<<std::endl;
+    std::cout<<"NOMBRE: "<<getTipo()<<std::endl;
+    std::cout<<"PAIS DE PROCEDENCIA: "<<getPais()<<std::endl;
+    std::cout<<"DOSIS REQUERIDA: "<<getDosis()<<std::endl;
+    std::cout<<"FECHA DE LLEGADA: "<<getFechaLlegada()<<std::endl;
+    std::cout<<"STOCK DISPONIBLE: "<<getStock()<<" UNIDADES"<<std::endl;
     std::cout<<std::endl;
 }
 
 void Vacunas::actualizarDatos(){
 int opcion{0};
     do{
+        system("cls");
         std::cout << ">>>SELECCIONE DATO A MODIFICAR: \n"
                   << "1)NOMBRE\n"
                   << "2)FECHA DE LLEGADA\n"
@@ -40,19 +43,21 @@ int opcion{0};
                   << "0)SALIR\n"; cin >> opcion;
         if(opcion==1){
             string tipo;
-            std::cout << ">>>INGRESE NUEVO TIPO: "; cin >> tipo;
+            std::cout << ">>>ACTUALICE NOMBRE: "; cin >> tipo;
             setTipo(tipo);
         }else if(opcion==2){
             string fecha;
-            std::cout << ">>>INGRESE NUEVA FECHA dd/mm/aa: "; cin >> fecha;
+            std::cout << ">>>ACTUALICE FECHA DE LLEGADA dd/mm/aa: "; cin >> fecha;
             setFechaLlegada(fecha);
         }else if(opcion==3){
             int c;
-            std::cout << ">>>INGRESE NUEVO STOCK: "; cin >> c;
-            setStock(getStock()+c);
+            std::cout << ">>>INGRESE CANTIDAD: "; cin >> c;
+            int op2;
+            std::cout << ">>>DESEA (1)AGREGAR (2)REDUCIR EL STOCK: "; cin >> op2;
+            op2==1?setStock(getStock()+c):setStock(getStock()-c);
         }else if(opcion==4){
-            int dosis;
-            std::cout << ">>>INGRESE NUEVO DOSIS REQUERIDA: "; cin >> dosis;
+            string dosis;
+            std::cout << ">>>ACTUALICE DOSIS REQUERIDA: "; getline(cin,dosis);
             setDosis(dosis);
         }else if(opcion==5){
             string pais;
@@ -62,9 +67,6 @@ int opcion{0};
     }while(opcion!=0);
 }
 
-void Vacunas::actualizarDatos(){
-    // menu actualizar dato especifico
-}
 
 void Vacunas::setPais(std::string pais){
     this->pais=pais;
@@ -74,13 +76,12 @@ std::string Vacunas::getPais(){
     return pais;
 }
 
-void Vacunas::setDosis(int cantDosis){
+void Vacunas::setDosis(std::string cantDosis){
     this->cantDosis=cantDosis;
 }
 
-int Vacunas::getDosis(){
+std::string Vacunas::getDosis(){
     return cantDosis;
 }
-
 
 #endif

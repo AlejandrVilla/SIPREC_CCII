@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <bits/stdc++.h>
+#include <conio.h>
 #include "Suministro.h"
 #include "Vacunas.h"
 #include "Prueba.h"
@@ -41,7 +42,6 @@ class Centro_de_Salud{
         //control para modificar
         void modificar();
         void eliminar();
-        void modificar();
 };
 
 Centro_de_Salud::Centro_de_Salud(){
@@ -66,6 +66,7 @@ Centro_de_Salud::~Centro_de_Salud(){
 void Centro_de_Salud::main(){
     int opcion;
     do{
+        system("cls");
         cout<<"<-------- MENU PRINCIPAL -------->"<<endl;
         cout<<"ELIJA UNA OPCION"<<endl;
         cout<<"1) ASIGNAR SUMINISTROS"<<endl;
@@ -78,7 +79,7 @@ void Centro_de_Salud::main(){
                 llenarSuministros();
                 break;
             case 2:
-                //actualizarSuministros();
+                actualizarSuministros();
                 break;
             case 3:
                 mostrarSuministros();
@@ -92,6 +93,7 @@ void Centro_de_Salud::main(){
 void Centro_de_Salud::llenarSuministros(){
     int opcion{0};
     do{
+        system("cls");
         cout<<"SELECCIONE SUMINISTRO\n";
         cout<<"1) VACUNA \n"
             <<"2) MASCARILLA \n"
@@ -120,6 +122,7 @@ void Centro_de_Salud::llenarSuministros(){
 
 void Centro_de_Salud::mostrarSuministros(){
     int opcion{0};
+    system("cls");
     do{
         cout<<">>>MOSTRAR: \n";
         cout<<"1) VACUNA \n"
@@ -130,15 +133,23 @@ void Centro_de_Salud::mostrarSuministros(){
         switch (opcion){
         case 1:
             getVacunas();
+            getch();
+            system("cls");
             break;
         case 2:
             getMascarillas();
+            getch();
+            system("cls");
             break;
         case 3:
             getMedicamentos();
+            getch();
+            system("cls");
             break;
         case 4:
             getPruebas();
+            getch();
+            system("cls");
             break;
         default:
             break;
@@ -149,17 +160,24 @@ void Centro_de_Salud::mostrarSuministros(){
 void Centro_de_Salud::actualizarSuministros(){
     int opcion{0};
     do{
+        system("cls");
         cout<<">>>ELIJA UNA ACCION A REALIZAR: \n";
         cout<<"1) ACTUALIZAR SUMINISTRO \n"
             <<"2) BORRAR SUMINISTRO \n"
             <<"0) SALIR \n";cin >> opcion;
-        
-
+        if(opcion==1){
+            modificar();
+        }else if(opcion==2){
+            eliminar();
+        }else{
+            break;
+        }
     }while(opcion!=0);
 }
 
 void Centro_de_Salud::modificar(){
     int opcion{0};
+    system("cls");
     do{
         cout<<">>>ELIJA EL SUMINISTRO: \n";
         cout<<"1) VACUNA \n"
@@ -169,49 +187,115 @@ void Centro_de_Salud::modificar(){
             <<"0) SALIR \n";cin >> opcion;
         string tipo;
         if(opcion==1){
-            cout << "VACUNA A MODIFICAR: "; cin >> tipo;
+            cout << "NOMBRE DE VACUNA A MODIFICAR: "; cin >> tipo;
             for(auto *a:vacunas){
                 if (a->getTipo() == tipo){
                     a->actualizarDatos();
+                    system("cls");
                     break;
                 }
+            }
         }
         else if(opcion==2){
-            cout << "MASCARILLA A MODIFICAR: "; cin >> tipo;
+            cout << "NOMBRE DE MASCARILLA A MODIFICAR: "; cin >> tipo;
             for(auto *a:mascarillas){
                 if (a->getTipo() == tipo){
                     a->actualizarDatos();
+                    system("cls");
                     break;
                 }
+            }
         }
         else if(opcion==3){
-            cout << "MEDICAMENTO A MODIFICAR: "; cin >> tipo;
+            cout << "NOMBRE DE MEDICAMENTO A MODIFICAR: "; cin >> tipo;
             for(auto *a:medicamentos){
                 if (a->getTipo() == tipo){
                     a->actualizarDatos();
+                    system("cls");
                     break;
                 }
+            }
         }
         else if(opcion==4){
-            cout << "PRUEBA A MODIFICAR: "; cin >> tipo;
+            cout << "NOMBRE DE PRUEBA A MODIFICAR: "; cin >> tipo;
             for(auto *a:pruebas){
                 if (a->getTipo() == tipo){
                     a->actualizarDatos();
+                    system("cls");
                     break;
                 }
+            }
+        }
+        else{
+            cout<<"REGRESANDO...\n";
+            system("cls");
+        }
+    }while(opcion!=0);
+}
+void Centro_de_Salud::eliminar(){
+    int opcion{0};
+    do{
+        system("cls");
+        cout<<">>>ELIJA EL SUMINISTRO A ELIMINAR: \n";
+        cout<<"1) VACUNA \n"
+            <<"2) MASCARILLA \n"
+            <<"3) MEDICAMENTO \n"
+            <<"4) PRUEBAS \n"
+            <<"0) SALIR \n";cin >> opcion;
+        string tipo;
+        if(opcion==1){
+            cout << "NOMBRE DE VACUNA A ELIMINAR: "; cin >> tipo;
+            for(int i=0;i<vacunas.size();++i){
+                if (vacunas[i]->getTipo() == tipo){
+                    vacunas.erase(vacunas.begin()+i);
+                    cout << "<-----ELIMINCAICON COMPLETADA----->\n";
+                    break;
+                }
+            }
+        }
+        else if(opcion==2){
+            cout << "NOMBRE DE MASCARILLA A ELIMINAR: "; cin >> tipo;
+            for(int i=0;i<mascarillas.size();++i){
+                if (mascarillas[i]->getTipo() == tipo){
+                    mascarillas.erase(mascarillas.begin()+i);
+                    cout << "<-----ELIMINCAICON COMPLETADA----->\n";
+                    break;
+                }
+            }
+        }
+        else if(opcion==3){
+            cout << "NOMBRE DE MEDICAMENTO A ELIMINAR: "; cin >> tipo;
+            for(int i=0;i<medicamentos.size();++i){
+                if (medicamentos[i]->getTipo() == tipo){
+                    medicamentos.erase(medicamentos.begin()+i);
+                    cout << "<-----ELIMINCAICON COMPLETADA----->\n";
+                    break;
+                }
+            }
+        }
+        else if(opcion==4){
+            cout << "NOMBRE DE PRUEBA A ELIMINAR: "; cin >> tipo;
+            for(int i=0;i<pruebas.size();++i){
+                if (pruebas[i]->getTipo() == tipo){
+                    pruebas.erase(pruebas.begin()+i);
+                    cout << "<-----ELIMINCAICON COMPLETADA----->\n";
+                    break;
+                }
+            }
         }
         else{
             cout<<"REGRESANDO...\n";
         }
     }while(opcion!=0);
 }
+
 /*
     *ASIGNADORES DE SUMINISTROS*
 */
 
 void Centro_de_Salud::setVacunas(){
-    string fechaLlegada,nombre,pais;
-    int stock,dosis;
+    string fechaLlegada,nombre,pais,dosis;
+    int stock;
     cout<<">>>NOMBRE DE LA VACUNA: "; cin >> nombre;
     cout<<">>>PAIS DE ORIGEN: "; cin >> pais; 
     cout<<">>>DOSIS RECOMENDADA: ";cin >> dosis;
@@ -236,10 +320,10 @@ void Centro_de_Salud::setMascarillas(){
     suministro = nullptr;
 }
 void Centro_de_Salud::setMedicamentos(){
-    string fechaLlegada,nombre,pais;
-    int stock,dosis;
-    cout<<">>>NOMBRE DE LA MEDICAMENTO: "; cin >> nombre; 
-    cout<<">>>DOSIS RECOMENDADA: ";cin >> dosis;
+    string fechaLlegada,nombre,pais,dosis;
+    int stock;
+    cout<<">>>NOMBRE DEL MEDICAMENTO: ";cin >> nombre; cout << "\n"; 
+    cout<<">>>DOSIS RECOMENDADA (P/PACIENTE): "; cin >> dosis;
     cout<<">>>FECHA DE ASIGNACION: ";cin>>fechaLlegada;
     cout<<">>>STOCK INGRESADO: ";cin>>stock;
     cout<<endl;
@@ -284,7 +368,5 @@ void Centro_de_Salud::getPruebas(){
         a->verInfo();
     }
 }
-
-
 
 #endif
