@@ -1,5 +1,5 @@
-#ifndef _CENTRO_DE_SALUD_
-#define _CENTRO_DE_SALUD_
+#ifndef __CENTRO_DE_SALUD__
+#define __CENTRO_DE_SALUD__
 #include <vector>
 #include <iostream>
 #include <bits/stdc++.h>
@@ -47,6 +47,7 @@ class Centro_de_Salud{
 Centro_de_Salud::Centro_de_Salud(){
 
 }
+
 Centro_de_Salud::Centro_de_Salud(string Nombre,string Distrito){
     this->Nombre = Nombre;
     this->Distrito = Distrito;
@@ -66,7 +67,7 @@ Centro_de_Salud::~Centro_de_Salud(){
 void Centro_de_Salud::main(){
     int opcion;
     do{
-        system("cls");
+        //system("cls");
         cout<<"<-------- MENU PRINCIPAL -------->"<<endl;
         cout<<"ELIJA UNA OPCION"<<endl;
         cout<<"1) ASIGNAR SUMINISTROS"<<endl;
@@ -93,7 +94,7 @@ void Centro_de_Salud::main(){
 void Centro_de_Salud::llenarSuministros(){
     int opcion{0};
     do{
-        system("cls");
+        //system("cls");
         cout<<"SELECCIONE SUMINISTRO\n";
         cout<<"1) VACUNA \n"
             <<"2) MASCARILLA \n"
@@ -122,7 +123,7 @@ void Centro_de_Salud::llenarSuministros(){
 
 void Centro_de_Salud::mostrarSuministros(){
     int opcion{0};
-    system("cls");
+    //system("cls");
     do{
         cout<<">>>MOSTRAR: \n";
         cout<<"1) VACUNA \n"
@@ -134,22 +135,22 @@ void Centro_de_Salud::mostrarSuministros(){
         case 1:
             getVacunas();
             getch();
-            system("cls");
+            //system("cls");
             break;
         case 2:
             getMascarillas();
             getch();
-            system("cls");
+            //system("cls");
             break;
         case 3:
             getMedicamentos();
             getch();
-            system("cls");
+            //system("cls");
             break;
         case 4:
             getPruebas();
             getch();
-            system("cls");
+            //system("cls");
             break;
         default:
             break;
@@ -160,7 +161,7 @@ void Centro_de_Salud::mostrarSuministros(){
 void Centro_de_Salud::actualizarSuministros(){
     int opcion{0};
     do{
-        system("cls");
+        //system("cls");
         cout<<">>>ELIJA UNA ACCION A REALIZAR: \n";
         cout<<"1) ACTUALIZAR SUMINISTRO \n"
             <<"2) BORRAR SUMINISTRO \n"
@@ -177,7 +178,7 @@ void Centro_de_Salud::actualizarSuministros(){
 
 void Centro_de_Salud::modificar(){
     int opcion{0};
-    system("cls");
+    //system("cls");
     do{
         cout<<">>>ELIJA EL SUMINISTRO: \n";
         cout<<"1) VACUNA \n"
@@ -191,7 +192,7 @@ void Centro_de_Salud::modificar(){
             for(auto *a:vacunas){
                 if (a->getTipo() == tipo){
                     a->actualizarDatos();
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             }
@@ -201,7 +202,7 @@ void Centro_de_Salud::modificar(){
             for(auto *a:mascarillas){
                 if (a->getTipo() == tipo){
                     a->actualizarDatos();
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             }
@@ -211,7 +212,7 @@ void Centro_de_Salud::modificar(){
             for(auto *a:medicamentos){
                 if (a->getTipo() == tipo){
                     a->actualizarDatos();
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             }
@@ -221,21 +222,21 @@ void Centro_de_Salud::modificar(){
             for(auto *a:pruebas){
                 if (a->getTipo() == tipo){
                     a->actualizarDatos();
-                    system("cls");
+                    //system("cls");
                     break;
                 }
             }
         }
         else{
             cout<<"REGRESANDO...\n";
-            system("cls");
+            //system("cls");
         }
     }while(opcion!=0);
 }
 void Centro_de_Salud::eliminar(){
     int opcion{0};
     do{
-        system("cls");
+        //system("cls");
         cout<<">>>ELIJA EL SUMINISTRO A ELIMINAR: \n";
         cout<<"1) VACUNA \n"
             <<"2) MASCARILLA \n"
@@ -299,7 +300,7 @@ void Centro_de_Salud::setVacunas(){
     cout<<">>>NOMBRE DE LA VACUNA: "; cin >> nombre;
     cout<<">>>PAIS DE ORIGEN: "; cin >> pais; 
     cout<<">>>DOSIS RECOMENDADA: ";cin >> dosis;
-    cout<<">>>FECHA DE ASIGNACION: ";cin>>fechaLlegada;
+    cout<<">>>FECHA DE ASIGNACION: ";cin >> fechaLlegada;
     cout<<">>>STOCK INGRESADO: ";cin>>stock;
     cout<<endl;
     Suministro *suministro = new Vacunas(nombre,stock,fechaLlegada,pais,dosis);

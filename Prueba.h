@@ -1,5 +1,5 @@
-#ifndef _PRUEBA_H_
-#define _PRUEBA_H_
+#ifndef __PRUEBA_H__
+#define __PRUEBA_H__
 #include <iostream>
 
 #include "Suministro.h"

@@ -9,7 +9,6 @@ class Medicamento:public Suministro{
         string dosis;
     public:    
         Medicamento(std::string tipo,std::string fechaLlegada,int stock,std::string _dosis)
-
         :Suministro(tipo,fechaLlegada,stock),dosis(_dosis){}
         virtual ~Medicamento(){}
 

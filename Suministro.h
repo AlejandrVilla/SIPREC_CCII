@@ -12,7 +12,8 @@ class Suministro{
         std::string fechaLlegada;
         int stock;
     public:
-        Suministro(std::string _tipo,std::string _fechaLlegada,int _stock):tipo(_tipo),fechaLlegada(_fechaLlegada),stock(_stock){}
+        Suministro( std::string _tipo,std::string _fechaLlegada,int _stock )
+        :tipo(_tipo),fechaLlegada(_fechaLlegada),stock(_stock){}
         virtual ~Suministro(){}
 
         virtual void verInfo()=0;  //funcion virtual pura

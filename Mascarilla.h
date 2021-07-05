@@ -6,11 +6,11 @@ class Mascarilla : public Suministro{
     private:
         std::string calidad;
     public:
-        Mascarilla(std::string tipo,std::string fechaLlegada, int stock, std::string _calidad)
+        Mascarilla( std::string tipo, std::string fechaLlegada, int stock, std::string _calidad )
         :Suministro(tipo,fechaLlegada, stock),calidad(_calidad){}
         virtual ~Mascarilla(){}
         
-        virtual void verInfo()override;
+        virtual void verInfo() override;
         virtual void actualizarDatos() override;
         void setCalidad(std::string);
         std::string getCalidad();
