@@ -23,26 +23,27 @@ void Prueba::verInfo(){
 }
 void Prueba::actualizarDatos(){
     int opcion{0};
+    fflush(stdin);
     do{
-        system("cls");
+        //system("cls");
         std::cout << ">>>SELECCIONE DATO A MODIFICAR: \n"
                   << "1)TIPO\n"
                   << "2)FECHA DE LLEGADA\n"
                   << "3)STOCK\n"
-                  << "0)SALIR\n"; cin >> opcion;
+                  << "0)SALIR\n"; cin >> opcion; fflush(stdin);
         if(opcion==1){
             std::string t;
-            std::cout << ">>>ACTUALICE TIPO DE PRUEBA: "; cin >> t;
+            std::cout << ">>>ACTUALICE TIPO DE PRUEBA: "; getline(cin,t); fflush(stdin);
             setTipo(t);
         }else if(opcion==2){
             std::string t;
-            std::cout << ">>>ACTUALICE FECHA DE LLEGADA dd/mm/aa: "; cin >> t;
+            std::cout << ">>>ACTUALICE FECHA DE LLEGADA dd/mm/aa: "; getline(cin,t); fflush(stdin);
             setFechaLlegada(t);
         }else if(opcion==3){
             int c;
-            std::cout << ">>>INGRESE CANTIDAD: "; cin >> c;
+            std::cout << ">>>INGRESE CANTIDAD: "; cin >> c; fflush(stdin);
             int op2;
-            std::cout << ">>>DESEA (1)AGREGAR (2)REDUCIR EL STOCK: "; cin >> op2;
+            std::cout << ">>>DESEA (1)AGREGAR (2)REDUCIR EL STOCK: "; cin >> op2; fflush(stdin);
             op2==1?setStock(getStock()+c):setStock(getStock()-c);
         }
         

@@ -6,7 +6,7 @@
 
 class Medicamento:public Suministro{
     private:
-        string dosis;
+        std::string dosis;
     public:    
         Medicamento(std::string tipo,std::string fechaLlegada,int stock,std::string _dosis)
         :Suministro(tipo,fechaLlegada,stock),dosis(_dosis){}
@@ -28,31 +28,32 @@ void Medicamento::verInfo(){
 
 void Medicamento::actualizarDatos(){
     int opcion{0};
+    fflush(stdin);
     do{
-        system("cls");
+        //system("cls");
         std::cout << ">>>SELECCIONE DATO A MODIFICAR: \n"
                   << "1)NOMBRE\n"
                   << "2)FECHA DE LLEGADA\n"
                   << "3)STOCK\n"
                   << "4)DOSIS REQUERIDA\n" 
-                  << "0)SALIR\n"; cin >> opcion;
+                  << "0)SALIR\n"; cin >> opcion; fflush(stdin);
         if(opcion==1){
             string tipo;
-            std::cout << ">>>ACTUALICE NOMBRE: "; cin >> tipo;
+            std::cout << ">>>ACTUALICE NOMBRE: "; getline(cin,tipo); fflush(stdin);
             setTipo(tipo);
         }else if(opcion==2){
             string fecha;
-            std::cout << ">>>ACTUALICE FECHA DE LLEGADA dd/mm/aa: "; cin >> fecha;
+            std::cout << ">>>ACTUALICE FECHA DE LLEGADA dd/mm/aa: "; getline(cin,fecha); fflush(stdin);
             setFechaLlegada(fecha);
         }else if(opcion==3){
             int c;
-            std::cout << ">>>INGRESE CANTIDAD: "; cin >> c;
+            std::cout << ">>>INGRESE CANTIDAD: "; cin >> c; fflush(stdin);
             int op2;
-            std::cout << ">>>DESEA (1)AGREGAR (2)REDUCIR EL STOCK: "; cin >> op2;
+            std::cout << ">>>DESEA (1)AGREGAR (2)REDUCIR EL STOCK: "; cin >> op2; fflush(stdin);
             op2==1?setStock(getStock()+c):setStock(getStock()-c);
         }else if(opcion==4){
             std::string dosis;
-            std::cout << ">>>ACTUALICE DOSIS REQUERIDA: "; getline(cin,dosis);
+            std::cout << ">>>ACTUALICE DOSIS REQUERIDA: "; getline(cin,dosis); fflush(stdin);
             setDosis(dosis);
         }
     }while(opcion!=0);

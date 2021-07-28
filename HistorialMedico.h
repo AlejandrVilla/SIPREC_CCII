@@ -23,8 +23,8 @@ class HistorialMedico{
         std::string getNombre(){ return nombre; }
         void setEdad(int edad){ this->edad = edad; }
         int getEdad(){ return edad; }
-        void setEnfermedades();
-        std::string getEnfermedades();
+        void setEnfermedades(std::string);
+        void getEnfermedades();
         void setFechaNacimiento(std::string fechaNacimiento){ this->fechaNacimiento = fechaNacimiento; }
         std::string getFechaNacimiento(){ return fechaNacimiento; }
         void setPeso(int peso){ this->peso = peso; }
@@ -38,5 +38,16 @@ class HistorialMedico{
         void setVulnerabilidad(std::string vulnerabilidad){ this->vulnerabilidad = vulnerabilidad; }
         std::string getVulnerabilidad(){ return vulnerabilidad; }   
 };
+
+void HistorialMedico::setEnfermedades( std::string enf ){
+    enfermedadesPrevias.push_back(enf);
+}
+
+void HistorialMedico::getEnfermedades(){
+    for (auto a:enfermedadesPrevias){
+        std::cout<<a<<" ";
+    }
+    std::cout<<'\n';
+}
 
 #endif
