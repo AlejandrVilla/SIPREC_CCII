@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>295</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SIPREC_CCII</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Icons.qrc">
+    <normaloff>:/4443501_healthy_hygiene_protect_shield_icon.png</normaloff>:/4443501_healthy_hygiene_protect_shield_icon.png</iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>472</width>
+      <height>235</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFunciones">
+    <property name="title">
+     <string>Navegación</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionSuministros_2"/>
+    <addaction name="actionHistoriales_Medicos_2"/>
+    <addaction name="actionVolver"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuAcerca_de">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionAcerca_de_SIPREC_CCII"/>
+    <addaction name="actionAcerca_de_QT"/>
+   </widget>
+   <addaction name="menuFunciones"/>
+   <addaction name="menuAcerca_de"/>
+  </widget>
+  <action name="actionSuministros_2">
+   <property name="text">
+    <string>Gestion Suministros</string>
+   </property>
+  </action>
+  <action name="actionHistoriales_Medicos_2">
+   <property name="text">
+    <string>Historiales Medicos</string>
+   </property>
+  </action>
+  <action name="actionVolver">
+   <property name="text">
+    <string>Listado</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_SIPREC_CCII">
+   <property name="text">
+    <string>Acerca de SIPREC_CCII</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_QT">
+   <property name="text">
+    <string>Acerca de QT</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
