@@ -1,9 +1,10 @@
 #include "primera_vista.h"
 #include "ui_primera_vista.h"
 #include "mainwindow.h"
-Primera_vista::Primera_vista(QWidget *parent) :
+Primera_vista::Primera_vista(QWidget *parent, Centro_Salud *_centroSalud) :
     QWidget(parent),
-    ui(new Ui::Primera_vista)
+    ui(new Ui::Primera_vista),
+    centroSalud(_centroSalud)
 {
     ui->setupUi(this);
 }

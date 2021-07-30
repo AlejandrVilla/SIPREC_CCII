@@ -2,7 +2,8 @@
 #define SEGUNDA_VISTA_H
 
 #include <QWidget>
-#include "mostarconboton.h"
+#include "Add_Sumi.h"
+#include "centro_salud.h"
 namespace Ui {
 class segunda_vista;
 }
@@ -12,14 +13,17 @@ class segunda_vista : public QWidget
     Q_OBJECT
 
 public:
-    explicit segunda_vista(QWidget *parent = nullptr);
+    explicit segunda_vista(QWidget *parent = nullptr, Centro_Salud *centroSalud = nullptr);
     ~segunda_vista();
 
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::segunda_vista *ui;
+    Centro_Salud *centroSalud;
 };
 
 #endif // SEGUNDA_VISTA_H

@@ -2,7 +2,7 @@
 #define MOSTARCONBOTON_H
 
 #include <QWidget>
-
+#include <QDialog>
 namespace Ui {
 class MostarconBoton;
 }

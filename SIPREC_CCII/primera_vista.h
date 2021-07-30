@@ -2,7 +2,7 @@
 #define PRIMERA_VISTA_H
 
 #include <QWidget>
-
+#include "centro_salud.h"
 namespace Ui {
 class Primera_vista;
 }
@@ -12,7 +12,7 @@ class Primera_vista : public QWidget
     Q_OBJECT
 
 public:
-    explicit Primera_vista(QWidget *parent = nullptr);
+    explicit Primera_vista(QWidget *parent = nullptr, Centro_Salud *centroSalud = nullptr);
     ~Primera_vista();
 
 private slots:
@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::Primera_vista *ui;
+    Centro_Salud *centroSalud;
 };
 
 #endif // PRIMERA_VISTA_H

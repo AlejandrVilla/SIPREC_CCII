@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "centro_salud.h"
 
 namespace Ui { class MainWindow; }
 
@@ -28,5 +28,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Centro_Salud *centroSalud;
 };
 #endif // MAINWINDOW_H

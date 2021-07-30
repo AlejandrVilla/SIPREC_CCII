@@ -9,10 +9,11 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    Centro_Salud *centroSalud = new Centro_Salud;
     ui->setupUi(this);
-    ui->stackedWidget->addWidget(new Primera_vista(this));
-    ui->stackedWidget->addWidget(new segunda_vista(this));
-    ui->stackedWidget->addWidget(new Tercera_vista(this));
+    ui->stackedWidget->addWidget(new Primera_vista(this,centroSalud));
+    ui->stackedWidget->addWidget(new segunda_vista(this,centroSalud));
+    ui->stackedWidget->addWidget(new Tercera_vista(this,centroSalud));
     setCentralWidget(ui->stackedWidget);
 
 }
