@@ -2,6 +2,7 @@
 #define __CENTRO_DE_SALUD__
 #include <vector>
 #include <iostream>
+#include <fstream>
 #include <bits/stdc++.h>
 #include <conio.h>
 #include "Suministro.h"
@@ -43,6 +44,19 @@ class Centro_de_Salud{
         void modificar();
         void eliminar();
 
+		//CSVvacunas
+		void leerCsvVacunas();
+		void escribirCsvVacunas();
+		//CSVmascarillas
+		void leerCsvMascarillas();
+		void escribirCsvMascarillas();
+		//CSVmedicamentos
+		void leerCsvMedicamentos();
+		void escribirCsvMedicamentos();		
+		//CSVpruebas
+		void leerCsvPruebas();
+		void escribirCsvPruebas();
+
         string getNombre(){return nombre;}
         string getDistrito(){return distrito;}
 };
@@ -55,6 +69,171 @@ Centro_de_Salud::Centro_de_Salud(string Nombre,string Distrito){
     this->nombre = Nombre;
     this->distrito = Distrito;
 }
+
+void Centro_de_Salud::leerCsvVacunas() {
+	ifstream lectura;
+	lectura.open("vacunas.csv", ios::in);
+	for(std::string linea; std::getline(lectura, linea); ) {
+		std::stringstream registro(linea);
+		std::string dato;
+		std::string _tipo, _llegada, _pais, _dosis;
+		int _stock;
+		for(int col = 0; std::getline(registro, dato, ';'); ++col) {
+			
+			switch(col) {
+				case 0: //tipo - string
+					_tipo = dato;	
+				break;
+				case 1: //stock - int
+					_stock = std::stoi(dato);
+				break;
+				case 2: //fecha de llegada - string 
+					_llegada = dato;
+				break;
+				case 3: //pais - string 
+					_pais = dato;
+				break;
+				case 4: //dosis - string 
+					_dosis = dato;
+				break;
+			}
+		}
+		Suministro *nuevoSuministro = new Vacunas(_tipo, _stock, _llegada, _pais, _dosis);
+		vacunas.push_back(nuevoSuministro);
+	}
+	lectura.close();
+}
+
+void Centro_de_Salud::leerCsvMascarillas() {
+	ifstream lectura;
+	lectura.open("mascarillas.csv", ios::in);
+	for(std::string linea; std::getline(lectura, linea); ) {
+		std::stringstream registro(linea);
+		std::string dato;
+		std::string _tipo, _llegada, _calidad;
+		int _stock;
+		for(int col = 0; std::getline(registro, dato, ';'); ++col) {
+			switch(col) {
+				case 0: //tipo - string
+					_tipo = dato;	
+				break;
+				case 1: //fecha de llegada - string 
+					_llegada = dato;
+				break;
+				case 2: //stock - int
+					_stock = std::stoi(dato);
+				break;
+				case 3: //calidad - string 
+					_calidad = dato;
+				break;
+			}
+		}
+		Suministro *nuevoSuministro = new Mascarilla(_tipo, _llegada, _stock, _calidad);
+		mascarillas.push_back(nuevoSuministro);
+	}
+	lectura.close();
+}
+
+void Centro_de_Salud::leerCsvMedicamentos() {
+	ifstream lectura;
+	lectura.open("medicamentos.csv", ios::in);
+	for(std::string linea; std::getline(lectura, linea); ) {
+		std::stringstream registro(linea);
+		std::string dato;
+		std::string _tipo, _llegada, _dosis;
+		int _stock;
+		for(int col = 0; std::getline(registro, dato, ';'); ++col) {
+			switch(col) {
+				case 0: //tipo - string
+					_tipo = dato;	
+				break;
+				case 1: //fecha de llegada - string 
+					_llegada = dato;
+				break;
+				case 2: //stock - int
+					_stock = std::stoi(dato);
+				break;
+				case 3: //dosis - string 
+					_dosis = dato;
+				break;
+			}
+		}
+		Suministro *nuevoSuministro = new Medicamento(_tipo, _llegada, _stock, _dosis);
+		medicamentos.push_back(nuevoSuministro);
+	}
+	lectura.close();
+}
+
+void Centro_de_Salud::leerCsvPruebas() {
+	ifstream lectura;
+	lectura.open("pruebas.csv", ios::in);
+	for(std::string linea; std::getline(lectura, linea); ) {
+		std::stringstream registro(linea);
+		std::string dato;
+		std::string _tipo, _llegada;
+		int _stock;
+		for(int col = 0; std::getline(registro, dato, ';'); ++col) {
+			switch(col) {
+				case 0: //tipo - string
+					_tipo = dato;	
+				break;
+				case 1: //fecha de llegada - string 
+					_llegada = dato;
+				break;
+				case 2: //stock - int
+					_stock = std::stoi(dato);
+				break;
+			}
+		}
+		Suministro *nuevoSuministro = new Prueba(_tipo, _llegada, _stock);
+		pruebas.push_back(nuevoSuministro);
+	}
+	lectura.close();
+}
+
+void Centro_de_Salud::escribirCsvVacunas(){
+	ofstream escritura;
+	escritura.open("vacunas.csv", ios::trunc);
+	for(auto v : vacunas) {
+		Vacunas* vac = dynamic_cast<Vacunas*>(v);
+		escritura << vac -> getTipo() << ';' << vac->getStock() << ';' << vac->getFechaLlegada() 
+					<< ';' << vac->getPais() << ';' << vac->getDosis() << '\n';
+	}
+	escritura.close();
+}
+
+void Centro_de_Salud::escribirCsvMascarillas(){
+	ofstream escritura;
+	escritura.open("mascarillas.csv", ios::trunc);
+	for(auto m : mascarillas) {
+		Mascarilla* mas = dynamic_cast<Mascarilla*>(m);
+		escritura << mas -> getTipo() << ';' << mas -> getFechaLlegada() << ';'
+				<< mas->getStock() << ';' << mas->getCalidad()<< '\n';
+	}
+	escritura.close();
+}
+
+void Centro_de_Salud::escribirCsvMedicamentos(){
+	ofstream escritura;
+	escritura.open("medicamentos.csv", ios::trunc);
+	for(auto m : medicamentos) {
+		Medicamento* med = dynamic_cast<Medicamento*>(m);
+		escritura << med -> getTipo() << ';' << med->getFechaLlegada() << ';' 
+				<< med->getStock() << ';' << med -> getDosis() << '\n';
+	}
+	escritura.close();
+}
+
+void Centro_de_Salud::escribirCsvPruebas(){
+	ofstream escritura;
+	escritura.open("pruebas.csv", ios::trunc);
+	for(auto p : pruebas) {
+		Prueba* pr = dynamic_cast<Prueba*>(p);
+		escritura << pr -> getTipo() << ';' << pr->getFechaLlegada() << ';' << pr->getStock() << '\n';
+	}
+	escritura.close();
+}
+
 
 Centro_de_Salud::~Centro_de_Salud(){
     for (size_t i=0;i<vacunas.size();i++)
@@ -69,7 +248,11 @@ Centro_de_Salud::~Centro_de_Salud(){
 
 void Centro_de_Salud::main(){
     int opcion;
-    fflush(stdin);
+    leerCsvVacunas();
+    leerCsvMascarillas();
+    leerCsvMedicamentos();
+    leerCsvPruebas();
+	fflush(stdin);
     do{
         //system("cls");
         cout<<"\n<-------- MENU SUMINISTROS -------->\n"<<endl;
@@ -208,6 +391,7 @@ void Centro_de_Salud::modificar(){
                     break;
                 }
             }
+            escribirCsvVacunas();
         }
         else if(opcion==2){
             cout << "NOMBRE DE MASCARILLA A MODIFICAR: "; getline(cin,tipo);fflush(stdin);
@@ -218,6 +402,7 @@ void Centro_de_Salud::modificar(){
                     break;
                 }
             }
+            escribirCsvMascarillas();
         }
         else if(opcion==3){
             cout << "NOMBRE DE MEDICAMENTO A MODIFICAR: ";  getline(cin,tipo);fflush(stdin);
@@ -228,6 +413,7 @@ void Centro_de_Salud::modificar(){
                     break;
                 }
             }
+            escribirCsvMedicamentos();
         }
         else if(opcion==4){
             cout << "NOMBRE DE PRUEBA A MODIFICAR: "; getline(cin,tipo);fflush(stdin);
@@ -238,6 +424,7 @@ void Centro_de_Salud::modificar(){
                     break;
                 }
             }
+            escribirCsvPruebas();
         }
         else{
             cout<<"\nREGRESANDO...\n";
@@ -266,6 +453,7 @@ void Centro_de_Salud::eliminar(){
                     break;
                 }
             }
+            escribirCsvVacunas();
         }
         else if(opcion==2){
             cout << "NOMBRE DE MASCARILLA A ELIMINAR: "; getline(cin,tipo);fflush(stdin);
@@ -276,6 +464,7 @@ void Centro_de_Salud::eliminar(){
                     break;
                 }
             }
+            escribirCsvMascarillas();
         }
         else if(opcion==3){
             cout << "NOMBRE DE MEDICAMENTO A ELIMINAR: "; getline(cin,tipo);fflush(stdin);
@@ -286,6 +475,7 @@ void Centro_de_Salud::eliminar(){
                     break;
                 }
             }
+            escribirCsvMedicamentos();
         }
         else if(opcion==4){
             cout << "NOMBRE DE PRUEBA A ELIMINAR: "; getline(cin,tipo);fflush(stdin);
@@ -296,6 +486,7 @@ void Centro_de_Salud::eliminar(){
                     break;
                 }
             }
+            escribirCsvPruebas();
         }
         else{
             cout<<"\nREGRESANDO...\n";
@@ -319,6 +510,7 @@ void Centro_de_Salud::setVacunas(){
     Suministro *suministro = new Vacunas(nombre,stock,fechaLlegada,pais,dosis);
     vacunas.push_back(suministro);
     suministro = nullptr;
+    escribirCsvVacunas();
 }
 
 void Centro_de_Salud::setMascarillas(){
@@ -332,6 +524,7 @@ void Centro_de_Salud::setMascarillas(){
     Suministro *suministro = new Mascarilla(tipo,fechaLlegada,stock,calidad);
     mascarillas.push_back(suministro);
     suministro = nullptr;
+    escribirCsvMascarillas();
 }
 void Centro_de_Salud::setMedicamentos(){
     string fechaLlegada,nombre,dosis;
@@ -344,6 +537,7 @@ void Centro_de_Salud::setMedicamentos(){
     Suministro *suministro = new Medicamento(nombre,fechaLlegada,stock,dosis);
     medicamentos.push_back(suministro);
     suministro = nullptr;
+    escribirCsvMedicamentos();
 }
 
 void Centro_de_Salud::setPruebas(){
@@ -356,6 +550,7 @@ void Centro_de_Salud::setPruebas(){
     Suministro *suministro = new Prueba(tipo,fechaLlegada,stock);
     pruebas.push_back(suministro);
     suministro = nullptr;
+	escribirCsvPruebas();
 }
 
 void Centro_de_Salud::getVacunas(){
