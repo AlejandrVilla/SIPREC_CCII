@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     Add_Sumi.cpp \
     add_his_med.cpp \
+    buscar_hist.cpp \
     buscar_sumi.cpp \
     centro_salud.cpp \
     historialmedico.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
 HEADERS += \
     Add_Sumi.h \
     add_his_med.h \
+    buscar_hist.h \
     buscar_sumi.h \
     centro_salud.h \
     historialmedico.h \
@@ -46,6 +48,7 @@ HEADERS += \
 FORMS += \
     Add_Sumi.ui \
     add_his_med.ui \
+    buscar_hist.ui \
     buscar_sumi.ui \
     mainwindow.ui \
     muestradatos.ui \

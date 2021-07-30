@@ -8,8 +8,8 @@ class HistorialMedico : public QObject
 {
     Q_OBJECT
 public:
-    HistorialMedico(QString _nombre,int _edad,QString _fechaNacimiento,int _peso,int _altura,int _DNI,QString _direccion,QString _vulnerabilidad)
-    :nombre(_nombre),edad(_edad),fechaNacimiento(_fechaNacimiento),peso(_peso),altura(_altura),DNI(_DNI),direccion(_direccion),vulnerabilidad(_vulnerabilidad){}
+    HistorialMedico(QString _nombre,int _edad,QString _fechaNacimiento,QString _sexo,int _peso,int _altura,int _DNI,QString _direccion,QString _vulnerabilidad)
+    :nombre(_nombre),edad(_edad),fechaNacimiento(_fechaNacimiento),sexo(_sexo),peso(_peso),altura(_altura),DNI(_DNI),direccion(_direccion),vulnerabilidad(_vulnerabilidad){}
 
     void setNombre(QString nombre){ this->nombre = nombre; }
     QString getNombre(){ return nombre; }
@@ -17,6 +17,8 @@ public:
     int getEdad(){ return edad; }
     void setFechaNacimiento(QString fechaNacimiento){ this->fechaNacimiento = fechaNacimiento; }
     QString getFechaNacimiento(){ return fechaNacimiento; }
+    void setSexo(QString sexo){ this->sexo = sexo; }
+    QString getSexo(){ return sexo; }
     void setPeso(int peso){ this->peso = peso; }
     int getPeso(){ return peso; }
     void setAltura(int altura){ this->altura = altura; }
@@ -35,6 +37,7 @@ private:
     int edad;
     QVector<QString> enfermedadesPrevias;
     QString fechaNacimiento;
+    QString sexo;
     int peso;
     int altura;
     int DNI;

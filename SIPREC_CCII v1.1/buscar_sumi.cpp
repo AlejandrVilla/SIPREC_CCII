@@ -21,6 +21,7 @@ Buscar_Sumi::Buscar_Sumi(QWidget *parent,Centro_Salud* _centroSalud) :
     ui->calidad->hide();
     ui->label_calidad->hide();
     ui->enviarpushbuton->hide();
+    ui->cancelarpushbuton->hide();
 }
 
 Buscar_Sumi::~Buscar_Sumi()
@@ -52,12 +53,12 @@ void Buscar_Sumi::on_pushButtonbuscar_clicked()
                 ui->calidad->hide();
                 ui->label_calidad->hide();
                 ui->enviarpushbuton->show();
-            }
-            else{
-                QMessageBox::critical(this,"Error","No se encontro el nombre del suministro indicado");
+                ui->cancelarpushbuton->show();
                 return;
             }
         }
+        QMessageBox::critical(this,"Error","No se encontro el nombre del suministro indicado");
+        return;
     }
     else if (ui->prueba->isChecked()){
         for (auto it = centroSalud->pruebas.begin() ; it != centroSalud->pruebas.end() ; it++){
@@ -75,12 +76,12 @@ void Buscar_Sumi::on_pushButtonbuscar_clicked()
                 ui->calidad->hide();
                 ui->label_calidad->hide();
                 ui->enviarpushbuton->show();
-            }
-            else{
-                QMessageBox::critical(this,"Error","No se encontro el nombre del suministro indicado");
+                ui->cancelarpushbuton->show();
                 return;
             }
         }
+        QMessageBox::critical(this,"Error","No se encontro el nombre del suministro indicado");
+        return;
     }
     else if (ui->mascarilla->isChecked()){
         for (auto it = centroSalud->mascarillas.begin() ; it != centroSalud->mascarillas.end() ; it++){
@@ -98,12 +99,12 @@ void Buscar_Sumi::on_pushButtonbuscar_clicked()
                 ui->calidad->show();
                 ui->label_calidad->show();
                 ui->enviarpushbuton->show();
-            }
-            else{
-                QMessageBox::critical(this,"Error","No se encontro el nombre del suministro indicado");
+                ui->cancelarpushbuton->show();
                 return;
             }
         }
+        QMessageBox::critical(this,"Error","No se encontro el nombre del suministro indicado");
+        return;
     }
     else if (ui->medicamento->isChecked()){
         for (auto it = centroSalud->medicamentos.begin() ; it != centroSalud->medicamentos.end() ; it++){
@@ -121,12 +122,12 @@ void Buscar_Sumi::on_pushButtonbuscar_clicked()
                 ui->calidad->hide();
                 ui->label_calidad->hide();
                 ui->enviarpushbuton->show();
-            }
-            else{
-                QMessageBox::critical(this,"Error","No se encontro el nombre del suministro indicado");
+                ui->cancelarpushbuton->show();
                 return;
             }
         }
+        QMessageBox::critical(this,"Error","No se encontro el nombre del suministro indicado");
+        return;
     }
 }
 
@@ -245,5 +246,24 @@ void Buscar_Sumi::on_enviarpushbuton_clicked()
         close();
         return;
     }
+}
+
+
+void Buscar_Sumi::on_cancelarpushbuton_clicked()
+{
+    ui->tipo->hide();
+    ui->label_tipo->hide();
+    ui->fecha->hide();
+    ui->label_fecha->hide();
+    ui->stock->hide();
+    ui->label_stock->hide();
+    ui->pais->hide();
+    ui->label_pais->hide();
+    ui->dosis->hide();
+    ui->label_dosis->hide();
+    ui->calidad->hide();
+    ui->label_calidad->hide();
+    ui->enviarpushbuton->hide();
+    ui->cancelarpushbuton->hide();
 }
 

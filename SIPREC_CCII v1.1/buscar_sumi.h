@@ -22,6 +22,8 @@ private slots:
 
     void on_enviarpushbuton_clicked();
 
+    void on_cancelarpushbuton_clicked();
+
 private:
     Ui::Buscar_Sumi *ui;
     Centro_Salud* centroSalud;

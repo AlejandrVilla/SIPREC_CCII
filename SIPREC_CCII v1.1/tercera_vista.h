@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "centro_salud.h"
 #include "add_his_med.h"
+#include "buscar_hist.h"
 namespace Ui {
 class Tercera_vista;
 }
@@ -18,6 +19,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::Tercera_vista *ui;

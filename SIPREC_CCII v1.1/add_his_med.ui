@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>443</width>
+    <height>385</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Añadir historial médico</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
+  <layout class="QGridLayout" name="gridLayout_4">
    <item row="0" column="0">
-    <layout class="QGridLayout" name="gridLayout">
+    <layout class="QGridLayout" name="gridLayout_3">
      <item row="0" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
           <widget class="QLabel" name="label_8">
@@ -78,7 +78,7 @@
          </item>
         </layout>
        </item>
-       <item>
+       <item row="0" column="1">
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QLineEdit" name="nombre"/>
@@ -102,31 +102,75 @@
           <widget class="QLineEdit" name="direccion"/>
          </item>
          <item>
-          <widget class="QLineEdit" name="vulnerabilidad"/>
+          <widget class="QLineEdit" name="enfermedades"/>
          </item>
         </layout>
        </item>
       </layout>
      </item>
      <item row="1" column="0">
-      <widget class="QPushButton" name="guardarpushbuton">
-       <property name="font">
-        <font>
-         <family>Berlin Sans FB Demi</family>
-         <pointsize>16</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Enviar</string>
-       </property>
-      </widget>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QRadioButton" name="varon">
+           <property name="text">
+            <string>varon</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="mujer">
+           <property name="text">
+            <string>mujer</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">buttonGroup</string>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="guardarpushbuton">
+         <property name="font">
+          <font>
+           <family>Berlin Sans FB Demi</family>
+           <pointsize>16</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Enviar</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>nombre</tabstop>
+  <tabstop>edad</tabstop>
+  <tabstop>fechanacimiento</tabstop>
+  <tabstop>peso</tabstop>
+  <tabstop>altura</tabstop>
+  <tabstop>dni</tabstop>
+  <tabstop>direccion</tabstop>
+  <tabstop>enfermedades</tabstop>
+  <tabstop>varon</tabstop>
+  <tabstop>mujer</tabstop>
+  <tabstop>guardarpushbuton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>

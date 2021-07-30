@@ -31,7 +31,7 @@ void Add_His_Med::on_guardarpushbuton_clicked()
     arr.push_back(_dni);
     QString direccion = ui->direccion->text();
     arr.push_back(direccion);
-    QString vulnerabilidad = ui->vulnerabilidad->text();
+    QString vulnerabilidad = ui->enfermedades->text();
     arr.push_back(vulnerabilidad);
     foreach(QString item,arr){
         if(item.isEmpty()){
@@ -40,11 +40,20 @@ void Add_His_Med::on_guardarpushbuton_clicked()
             return;
         }
     }
+    QString sexo;
+    if ( ui->varon->isChecked() ){
+        sexo = "varon";
+    }else if ( ui->mujer->isChecked() ){
+        sexo = "mujer";
+    }else{
+        QMessageBox::critical(this,"Error","Seleccione un sexo");
+        return;
+    }
     int edad = _edad.toInt();
     int peso = _peso.toInt();
     int altura = _altura.toInt();
     int dni = _dni.toInt();
-    HistorialMedico* historial = new HistorialMedico(nombre,edad,fechanacimiento,peso,altura,dni,direccion,vulnerabilidad);
+    HistorialMedico* historial = new HistorialMedico(nombre,edad,fechanacimiento,sexo,peso,altura,dni,direccion,vulnerabilidad);
     centroSalud->historiales.push_back( historial );
     QMessageBox::information(this,"Exito", "Historial '"+ nombre + "' guardado.");
     close();

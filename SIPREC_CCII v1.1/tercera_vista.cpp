@@ -16,9 +16,17 @@ Tercera_vista::~Tercera_vista()
 
 void Tercera_vista::on_pushButton_clicked()
 {
-    Add_His_Med *Nuevo_Hist = new Add_His_Med(this,centroSalud);
-    Nuevo_Hist->setModal(true);
-    Nuevo_Hist->exec();
+    Add_His_Med Nuevo_Hist(this,centroSalud);
+    Nuevo_Hist.setModal(true);
+    Nuevo_Hist.exec();
 }
 
+
+
+void Tercera_vista::on_pushButton_2_clicked()
+{
+    Buscar_hist Buscar(this,centroSalud);
+    Buscar.setModal(true);
+    Buscar.exec();
+}
 
