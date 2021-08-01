@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>285655_user_icon.png</file>
+        <file>5986166_supplies_icon.png</file>
+        <file>4443501_healthy_hygiene_protect_shield_icon.png</file>
+        <file>1622833_checkmark_icon.png</file>
+        <file>3440904_add_icon.png</file>
+        <file>314724_document_edit_icon.png</file>
+        <file>1646012_cancel_icon.png</file>
+        <file>20287_delete_exit_icon.png</file>
+        <file>23632_add_user_icon.png</file>
+        <file>88361_adwords_editor_icon.png</file>
+        <file>2119342_medicines_scientific_icon.png</file>
+        <file>5803988_mask_covid_icon.png</file>
+        <file>5991186_blood_coronavirus_icon.png</file>
+        <file>6673743_health_hospital_injection_icon.png</file>
+        <file>7106340_woman_icon.png</file>
+        <file>7106343_men_icon.png</file>
+        <file>337140_qt_icon.png</file>
+    </qresource>
+</RCC>
