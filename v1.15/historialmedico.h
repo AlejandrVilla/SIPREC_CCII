@@ -32,7 +32,6 @@ public:
     void setEnfermedades(QString);
     void setSexo(QString _sexo);
     QString getSexo();
-    //void getEnfermedades();
 
 private:
     QString nombre;

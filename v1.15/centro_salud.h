@@ -38,12 +38,11 @@ private:
     static Centro_Salud* _centroSalud;                              //singleton patern
     Centro_Salud(QObject *parent = nullptr , QString name = "");    //singleton patern
     QString name;
-    /*Revisar Abstraccion*/
-    /**/QVector<Vacunas*> vacunas;
-    /**/QVector<Prueba*> pruebas;
-    /**/QVector<Mascarilla*> mascarillas;
-    /**/QVector<Medicamento*> medicamentos;
-    /**/QVector<HistorialMedico*> historiales;
+    QVector<Vacunas*> vacunas;
+    QVector<Prueba*> pruebas;
+    QVector<Mascarilla*> mascarillas;
+    QVector<Medicamento*> medicamentos;
+    QVector<HistorialMedico*> historiales;
 };
 
 #endif // CENTRO_SALUD_H

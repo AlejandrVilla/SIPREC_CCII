@@ -6,11 +6,6 @@
 
 int main(int argc, char *argv[])
 {
-    /*
-     *Implementar metodo para obtener la ruta local.
-     *Implementacion de patrones(Importante, falta uno de 4).
-    */
-
     QApplication a(argc, argv);
     Centro_Salud *centroSalud = Centro_Salud::getInstance(nullptr,"Honorio Delgado");   //singleton patern
     DataVisitor visitCentroSalud(centroSalud);                                          //visitor patern
