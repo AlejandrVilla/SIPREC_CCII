@@ -4,7 +4,7 @@
  - Tiene como finalidad, la gestión de datos de vital importancia en el contexto de un Centro de Salud.
  - Es un proyecto desarrollado como trabajo final para el curso de Ciencia de la Computación II, tercer semestre de la carrera profesional de Ciencia de la Computación.
 
- ![alt text](https://github.com/AlejandrVilla/SIPREC_CCII/blob/v1.15/v1.15/4443501_healthy_hygiene_protect_shield_icon.png =250x250)
+ ![](https://github.com/AlejandrVilla/SIPREC_CCII/blob/v1.15/v1.15/4443501_healthy_hygiene_protect_shield_icon.png =250x250)
 **INSTRUCCIONES PARA EL ACCESO**
  - Descargar (.zip)
  - Instalar QT en el ordenador
