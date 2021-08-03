@@ -4,6 +4,7 @@
  - Tiene como finalidad, la gestión de datos de vital importancia en el contexto de un Centro de Salud.
  - Es un proyecto desarrollado como trabajo final para el curso de Ciencia de la Computación II, tercer semestre de la carrera profesional de Ciencia de la Computación.
 
+ ![alt text](https://github.com/Mrsbl465/DBP/blob/final/CAPTURAS/LABORATORIO_6/001.PNG?raw=true)
 **INSTRUCCIONES PARA EL ACCESO**
  - Descargar (.zip)
  - Instalar QT en el ordenador
