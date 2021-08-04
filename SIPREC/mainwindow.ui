@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>295</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SIPREC_CCII</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Icons.qrc">
+    <normaloff>:/4443501_healthy_hygiene_protect_shield_icon.png</normaloff>:/4443501_healthy_hygiene_protect_shield_icon.png</iconset>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFunciones">
+    <property name="title">
+     <string>Navegación</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionSuministros_2"/>
+    <addaction name="actionHistoriales_Medicos_2"/>
+    <addaction name="actionListado"/>
+    <addaction name="separator"/>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuAcerca_de">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionAcerca_de_SIPREC_CCII"/>
+    <addaction name="actionAcerca_de_QT"/>
+   </widget>
+   <addaction name="menuFunciones"/>
+   <addaction name="menuAcerca_de"/>
+  </widget>
+  <action name="actionSuministros_2">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/5986166_supplies_icon.png</normaloff>:/5986166_supplies_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Suministros</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionHistoriales_Medicos_2">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/285655_user_icon.png</normaloff>:/285655_user_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Historiales Medicos</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionListado">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/1622833_checkmark_icon.png</normaloff>:/1622833_checkmark_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Listado</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/20287_delete_exit_icon.png</normaloff>:/20287_delete_exit_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_SIPREC_CCII">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/4443501_healthy_hygiene_protect_shield_icon.png</normaloff>:/4443501_healthy_hygiene_protect_shield_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Acerca de SIPREC_CCII</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_QT">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/337140_qt_icon.png</normaloff>:/337140_qt_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Acerca de QT</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
