@@ -3,13 +3,14 @@
 
 #include <QObject>
 
-class Suministro : public QObject
-{
+class Suministro : public QObject{
+
     Q_OBJECT
+
 public:
     Suministro( QString _tipo,QString _fechaLlegada,int _stock )
             :tipo(_tipo),fechaLlegada(_fechaLlegada),stock(_stock){}
-    virtual ~Suministro(){}
+    ~Suministro(){}
     void setTipo(QString);
     QString getTipo();
     void setFechaLlegada(QString);

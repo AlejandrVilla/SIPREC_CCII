@@ -1,6 +1,7 @@
 #include "primera_vista.h"
 #include "ui_primera_vista.h"
 #include "mainwindow.h"
+
 Primera_vista::Primera_vista(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Primera_vista)

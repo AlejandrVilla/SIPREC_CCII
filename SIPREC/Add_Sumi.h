@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include "centro_salud.h"
-namespace Ui {
-class AddSumi;
-}
+
+namespace Ui { class AddSumi; }
 
 class AddSumi : public QDialog
 {

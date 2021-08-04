@@ -18,8 +18,8 @@ class DataVisitor;
 class Muestra_Historiales;
 class MuestraDatos;
 
-class Centro_Salud : public QObject
-{
+class Centro_Salud : public QObject{
+
     Q_OBJECT
 
 public:  

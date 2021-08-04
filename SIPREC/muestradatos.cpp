@@ -1,6 +1,7 @@
 #include "muestradatos.h"
 #include "ui_muestradatos.h"
 #include "vacunas.h"
+
 MuestraDatos::MuestraDatos(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MuestraDatos)

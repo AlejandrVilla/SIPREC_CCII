@@ -3,9 +3,8 @@
 
 #include <QDialog>
 #include "centro_salud.h"
-namespace Ui {
-class Busc_Historial;
-}
+
+namespace Ui { class Busc_Historial; }
 
 class Busc_Historial : public QDialog
 {

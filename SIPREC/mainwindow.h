@@ -6,14 +6,13 @@
 
 namespace Ui { class MainWindow; }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow{
+
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr, Centro_Salud * centroSalud = nullptr);
+    MainWindow(QWidget *parent = nullptr, Centro_Salud * centroSalud = nullptr);
     ~MainWindow();
-
 
 private slots:
     void on_actionSuministros_2_triggered();
@@ -28,9 +27,9 @@ private slots:
 
     void on_actionAcerca_de_SIPREC_CCII_triggered();
 
-
 private:
     Ui::MainWindow *ui;
     Centro_Salud *centroSalud;
 };
+
 #endif // MAINWINDOW_H

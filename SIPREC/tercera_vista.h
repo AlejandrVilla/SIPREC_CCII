@@ -5,12 +5,11 @@
 #include "centro_salud.h"
 #include "add_his_med.h"
 #include "busc_historial.h"
-namespace Ui {
-class Tercera_vista;
-}
 
-class Tercera_vista : public QWidget
-{
+namespace Ui { class Tercera_vista; }
+
+class Tercera_vista : public QWidget{
+
     Q_OBJECT
 
 public:

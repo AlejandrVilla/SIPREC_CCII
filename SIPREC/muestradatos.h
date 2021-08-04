@@ -3,12 +3,10 @@
 
 #include <QDialog>
 #include "centro_salud.h"
-namespace Ui {
-class MuestraDatos;
-}
+namespace Ui { class MuestraDatos; }
 
-class MuestraDatos : public QDialog
-{
+class MuestraDatos : public QDialog{
+
     Q_OBJECT
 
 public:

@@ -5,9 +5,7 @@
 #include "centro_salud.h"
 #include "modificar_sumi.h"
 
-namespace Ui {
-class Buscar_Sumi;
-}
+namespace Ui { class Buscar_Sumi; }
 
 class Buscar_Sumi : public QDialog
 {

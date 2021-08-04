@@ -6,12 +6,10 @@
 #include "buscar_sumi.h"
 #include "centro_salud.h"
 
-namespace Ui {
-class segunda_vista;
-}
+namespace Ui { class segunda_vista; }
 
-class segunda_vista : public QWidget
-{
+class segunda_vista : public QWidget{
+
     Q_OBJECT
 
 public:

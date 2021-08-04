@@ -5,12 +5,11 @@
 #include "centro_salud.h"
 #include "muestradatos.h"
 #include "muestra_historiales.h"
-namespace Ui {
-class Primera_vista;
-}
 
-class Primera_vista : public QWidget
-{
+namespace Ui { class Primera_vista; }
+
+class Primera_vista : public QWidget{
+
     Q_OBJECT
 
 public:

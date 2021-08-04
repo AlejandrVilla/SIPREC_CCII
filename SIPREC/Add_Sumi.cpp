@@ -7,6 +7,7 @@
 #include "vacunas.h"
 #include "medicamento.h"
 #include "mascarilla.h"
+
 AddSumi::AddSumi(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddSumi)

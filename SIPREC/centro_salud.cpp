@@ -14,7 +14,6 @@ Centro_Salud* Centro_Salud::getInstance(QObject *parent,QString name){      //si
 }
 
 Centro_Salud::~Centro_Salud(){
-
     for (auto it = vacunas.begin() ; it != vacunas.end() ; it++){
         delete *it;
     }
@@ -30,7 +29,6 @@ Centro_Salud::~Centro_Salud(){
     for (auto it = historiales.begin() ; it != historiales.end() ; it++){
         delete *it;
     }
-
 }
 
 QString Centro_Salud::getName(){

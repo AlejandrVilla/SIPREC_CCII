@@ -5,6 +5,7 @@
 #include "segunda_vista.h"
 #include "tercera_vista.h"
 #include <QMessageBox>
+
 MainWindow::MainWindow(QWidget *parent, Centro_Salud *_centroSalud)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),

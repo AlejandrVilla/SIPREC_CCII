@@ -4,15 +4,17 @@
 #include <QObject>
 #include <QVector>
 
-class HistorialMedico : public QObject
-{
+class HistorialMedico : public QObject{
+
     Q_OBJECT
+
 public:
     HistorialMedico(QString _nombre,int _edad,QString _fechaNacimiento,QString _peso,QString _sexo,
                     QString _altura,int _DNI,QString _direccion,QString _enfermedadesPrevias)
     :nombre(_nombre),edad(_edad),fechaNacimiento(_fechaNacimiento),
      peso(_peso),sexo(_sexo),altura(_altura),DNI(_DNI),direccion(_direccion),
      enfermedadesPrevias(_enfermedadesPrevias){}
+    ~HistorialMedico(){}
 
     void setNombre(QString nombre);
     QString getNombre();

@@ -1,6 +1,7 @@
 #include "add_his_med.h"
 #include "ui_add_his_med.h"
 #include "QMessageBox"
+
 Add_His_Med::Add_His_Med(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Add_His_Med)

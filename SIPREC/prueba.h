@@ -3,13 +3,13 @@
 
 #include "suministro.h"
 
-class Prueba : public Suministro
-{
+class Prueba : public Suministro{
+
 public:
     Prueba(QString tipo,QString fechaLlegada,int stock)
     :Suministro(tipo,fechaLlegada,stock){}
 
-    virtual ~Prueba(){}
+    ~Prueba(){}
 };
 
 #endif // PRUEBA_H
