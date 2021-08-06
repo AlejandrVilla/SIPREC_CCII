@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.15.2, 2021-08-04T15:59:31. -->
+<!-- Written by QtCreator 4.15.2, 2021-08-05T18:37:08. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -294,8 +294,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/archivos personales/documentos/C++/CC II/SIPREC_CCII versiones/SIPREC_CCII-1.15/v1.15/SIPREC_CCII.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/archivos personales/documentos/C++/CC II/SIPREC_CCII versiones/SIPREC_CCII-1.15/v1.15/SIPREC_CCII.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">SIPREC_CCII2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/archivos personales/documentos/C++/CC II/SIPREC_CCII/SIPREC/SIPREC_CCII.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/archivos personales/documentos/C++/CC II/SIPREC_CCII/SIPREC/SIPREC_CCII.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
